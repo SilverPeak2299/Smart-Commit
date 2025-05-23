@@ -9,6 +9,9 @@ def get_git_dif():
     except subprocess.CalledProcessError:
         return ""
 
+##test comment
+
+
 @click.command()
 def main():
     API_KEY = keyring.get_password("smart-commit", "api_key")
