@@ -1,6 +1,6 @@
 [project]
 name = "smart-commit"
-version = "0.0.1"
+version = "0.1.0"
 description = ""
 authors = [
     {name = "SilverPeak2299",email = "dannydickerson03@gmail.com"}

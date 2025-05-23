@@ -17,11 +17,16 @@ def get_commit_msg(git_diff: str, API_KEY):
     response = client.models.generate_content(
         model="gemini-2.5-flash-preview-05-20",
         config=types.GenerateContentConfig(
-            system_instruction="Generate a conventional commit message from the provided git diff. Use modern conversion and styling. Keep it under 50 characters, present tense, no period."),
+            system_instruction="Generate a conventional commit message from the provided git diff. Use modern conversion and styling but try to keep some description of changes themselves. Keep it under 50 characters, present tense, no period."),
         contents= git_diff
     )
     
-    return response.candidates[0].content.parts[0].text
+    try:
+        return response.candidates[0].content.parts[0].text
+        
+    except:
+        print("Error in parsing Gemini Response")
+        return "Placeholder Commit Msg"
     
     
 def commit_with_message(message):
