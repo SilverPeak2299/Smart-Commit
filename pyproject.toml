@@ -1,7 +1,7 @@
 [project]
-name = "smart-commit"
+name = "auto-smart-commit"
 version = "0.1.0"
-description = ""
+description = "CLI tool for generating Git commit messages with AI"
 authors = [
     {name = "SilverPeak2299",email = "dannydickerson03@gmail.com"}
 ]

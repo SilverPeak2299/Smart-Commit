@@ -8,3 +8,7 @@ def main(api_key: str):
     # Using OS password manager to store the API key securely
     keyring.set_password("smart-commit", "api_key", api_key)
     print("API key set successfully.")
+    
+    
+def get_api_key():
+    return keyring.get_password("smart-commit", "api_key")
